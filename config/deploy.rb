@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "sucker"
-set :repo_url, "git@gitserver.alco.dk:takiro/speicher.git"
+set :repo_url, "git@gitserver.alco.dk:walther/sucker.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
