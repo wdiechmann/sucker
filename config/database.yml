@@ -52,5 +52,5 @@ production:
   database: sucker_production
   pool: 5
   username: root
-  password: AlPass2018!
+  password: xxxxxxxxx
   host: 10.0.0.23

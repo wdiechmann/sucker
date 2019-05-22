@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sucker [ed: for Rails] is a test application to verify whether 
+NGINX as a reverse proxy, and Puma as the application server,
+are able to deliver on the wss promise.
 
-Things you may want to cover:
+Things to do once you've cloned this repo:
 
-* Ruby version
+* change repo_url in config/deploy.rb
 
-* System dependencies
+* change some-sld.tld in config/sucker.nginx.conf
 
-* Configuration
+* change all roles in config/deploy/production.rb
 
-* Database creation
+* change production database user, host, and password in config/database.yml
 
-* Database initialization
+* bundle exec cap production deploy
 
-* How to run the test suite
+* (deployment machine) cd /etc/nginx/sites-enabled && ln -s /$DEPLOY_TO/current/config/sucker.nginx.conf sucker
 
-* Services (job queues, cache servers, search engines, etc.)
+* sudo service nginx reload
 
-* Deployment instructions
+* (local machine) bundle exec cap puma:start
 
-* ...
+* http://sucker.some-sld.tld/messages
+
+Look out for errors in the Chrome/Firefox/et al. DevTools 
