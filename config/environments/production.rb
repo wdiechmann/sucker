@@ -41,9 +41,9 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-  config.web_socket_server_url = "ws://sucker.alco.dk/cable"
-  config.action_cable.url = 'ws://sucker.alco.dk/cable'
-  config.action_cable.allowed_request_origins = [ 'http://sucker.alco.dk', /http:\/\/sucker.*/ ]
+  config.web_socket_server_url = "wss://sucker.alco.dk/cable"
+  config.action_cable.url = 'wss://sucker.alco.dk/cable'
+  config.action_cable.allowed_request_origins = [ 'https://sucker.alco.dk', /https:\/\/sucker.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
