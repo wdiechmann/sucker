@@ -49,8 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: sucker_production
+  database: <%= ENV['SQL_DATABASE'] %>
   pool: 5
-  username: root
-  password: xxxxxxxxx
-  host: 10.0.0.23
+  username: <%= ENV['SQL_USER'] %>
+  password: <%= ENV['SQL_PASSWORD'] %>
+  host: <%= ENV['SQL_HOST'] %>
