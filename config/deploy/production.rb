@@ -1,3 +1,3 @@
-role :app, %w{oxenserver@ruby2019.alco.dk}
-role :web, %w{oxenserver@ruby2019.alco.dk}
-role :db,  %w{oxenserver@ruby2019.alco.dk}
+role :app, %w{ENV['DEPLOY_ROLE_APP']}
+role :web, %w{ENV['DEPLOY_ROLE_WEB']}
+role :db,  %w{ENV['DEPLOY_ROLE_DB']}
