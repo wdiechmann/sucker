@@ -22,7 +22,7 @@ set :repo_url, "git@gitserver.alco.dk:walther/sucker.git"
 
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads', 'db/imports', 'storage', 'db/archive/dop', 'db/archive/datablad', 'db/archive/label'
-append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/master.key'
+append :linked_files, 'config/database.yml', 'config/secrets.yml', '.env.production'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
