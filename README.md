@@ -4,6 +4,10 @@ Sucker [ed: for Rails] is a test application to verify whether
 NGINX as a reverse proxy, and Puma as the application server,
 are able to deliver on the wss promises of Action Cable.
 
+Spoiler alert: It does :)
+
+Hence right now this project serves as a test of my next issue: when posting messages, I am only able to attach one file, and not anything in excess of 8KB.
+
 ## Contents of Sucker
 
 Sucker does not really offer much in terms of content - a single 
