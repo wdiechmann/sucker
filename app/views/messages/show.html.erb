@@ -10,5 +10,13 @@
   <%= @message.content %>
 </p>
 
+<ul>
+  <% @message.images.each do |image| %>
+    <li>
+      <%= image_tag image.variant(resize: "100x100") %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>
