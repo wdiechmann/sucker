@@ -8,6 +8,29 @@ Spoiler alert: It does :)
 
 Hence right now this project serves as a test of my next issue: when posting messages, I am only able to attach one file, and not anything in excess of 8KB.
 
+Update 13th June 2019:
+
+So, finally - I cracked it! 
+
+The giveaways were 
+
+- /var/lib/nginx/tmp/client_body/0000000004" failed (13: Permission denied) in /var/log/nginx/sucker.error.log
+- the 'dot' after the file permissions!
+
+I knew I had disabled SELinux already but little did I know that files are protected even with SELinux disabled (makes a lot of sense)
+
+So I had to do this
+
+```
+# yum install attr
+# find /var/lib/nginx -exec sudo setfattr -h -x security.selinux {} \;
+# cd /var/lib/nginx
+# chown -R oxenserver.nginx tmp
+# chmod 766 -R tmp
+# service nginx reload
+```
+(on my CentOS box with the /etc/nginx.conf user set to oxenserver)
+
 ## Contents of Sucker
 
 Sucker does not really offer much in terms of content - a single 
